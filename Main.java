@@ -4,22 +4,14 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] strings = (reader.readLine().split(" "));
-        int[] ints = stringToInt(strings);
-        System.out.println(Arrays.toString(ints));
-        sorting(new BubbleSort(),ints);
+    public static void main(String[] args)  {
+        int[] testArray = {2, 4, 66, 4, 3, 23, 5, 330,4,4,0,1};
+
+        sorting(new BubbleSort(),testArray);                                    //Bubblesort
 
     }
 
-    public static int[] stringToInt(String[] strings){     //Convert array of strings to List of int's
-        int[] ints = new int[strings.length];
-        for (int i = 0; i < strings.length; i++) {
-            ints[i] = Integer.parseInt(strings[i]);
-        }
-        return ints;
-    }
+
     public static void sorting(SortMethod sortMethod, int[] sortArray){
          int[] sorted = sortMethod.sort(sortArray);
         System.out.println(Arrays.toString(sorted)+" - "+sortMethod.getClass());

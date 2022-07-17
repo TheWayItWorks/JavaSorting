@@ -1,21 +1,24 @@
 public class BubbleSort implements SortMethod {
     @Override
-    public int[] sort(int[] nonSort) {                         //BubbleSorting
+    public int[] sort(int[] nonSort) {                         //BubbleSorting improved
 
-        for (int j = 0; j < nonSort.length; j++) {
+             boolean sorted = false;
+             while (!sorted) {
+                 sorted = true;
+                 for (int i = 0; i < nonSort.length - 1; i++) {
+                     int first = nonSort[i];
+                     int second = nonSort[i + 1];
+                     if (first > second) {
+                         int temp;
+                         temp = first;
+                         nonSort[i] = second;
+                         nonSort[i + 1] = temp;
+                         sorted = false;
+                     }
+                 }
+             }
 
-            for (int i = 0; i < nonSort.length-1; i++) {
-                int first = nonSort[i];
-                int second = nonSort[i+1];
-                if (first>second){
-                    int temp;
-                    temp = first;
-                    nonSort[i] = second;
-                    nonSort[i+1] =temp;
-                }
-            }
 
-        }
         return nonSort;
     }
 }
