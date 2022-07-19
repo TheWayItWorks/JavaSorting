@@ -6,12 +6,11 @@ public class SelectionSort implements SortMethod{
         for (int i = 0; i < nonSort.length; i++) {
             int minIndex =min(nonSort,i);
             int minValue = nonSort[minIndex];
-            if (nonSort[i]>minValue){
-                int temp = nonSort[i];
+            int temp = nonSort[i];
                 nonSort[i] = minValue;
                 nonSort[minIndex] = temp;
 
-            }
+
 
 
         }
