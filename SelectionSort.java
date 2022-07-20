@@ -1,13 +1,15 @@
+import java.util.Arrays;
+
 public class SelectionSort implements SortMethod{
 
     @Override
     public int[] sort(int[] nonSort) {
 
         for (int i = 0; i < nonSort.length; i++) {
+            System.out.println(Arrays.toString(nonSort) +" step "+i);
             int minIndex =min(nonSort,i);
-            int minValue = nonSort[minIndex];
             int temp = nonSort[i];
-                nonSort[i] = minValue;
+                nonSort[i] = nonSort[minIndex];
                 nonSort[minIndex] = temp;
 
 
