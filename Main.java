@@ -16,6 +16,10 @@ public class Main {
         sorting(new SelectionSort(),testArray);                                    //Selection sorting
 
         sorting(new QuickSort(),testArray);                                       //Qsort
+
+        measureTime(() -> sorting(new QuickSort(),testArray));
+
+
     }
 
 
@@ -25,5 +29,10 @@ public class Main {
         sorted = sortMethod.sort(sorted);
         System.out.println(Arrays.toString(sorted)+" - "+sortMethod.getClass());
     }
-
+    private static void measureTime(Runnable task) {
+        long startTime = System.currentTimeMillis();
+        task.run();
+        long elapsed = System.currentTimeMillis() - startTime;
+        System.out.println("Затраченное время: " + elapsed + " ms");
+    }
 }
