@@ -8,31 +8,28 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args)  {
-        int[] testArray = {2, 4, 66, 4, 3, 23, 5, 330,4,4,0,1};
+        int capacity = 100000;
+        int[] testArray = new int[capacity];
+        for (int i = 0; i < capacity; i++) {
+            testArray[i] = (int)Math.round(Math.random() * 100);
+        }
+        measureTime(() -> sorting(new QuickSort(),testArray));       //Qsort
+        measureTime(() -> sorting(new SelectionSort(),testArray));   //selectionSort
+        measureTime(() -> sorting(new BubbleSort(),testArray));      //Bubble-sort
 
 
-        sorting(new BubbleSort(),testArray);                                      //BubbleSort
-
-        sorting(new SelectionSort(),testArray);                                    //Selection sorting
-
-        sorting(new QuickSort(),testArray);                                       //Qsort
-
-        measureTime(() -> sorting(new QuickSort(),testArray));
 
 
     }
-
-
-
     public static void sorting(SortMethod sortMethod, int[] sortArray){
         int[] sorted = sortArray.clone();
-        sorted = sortMethod.sort(sorted);
-        System.out.println(Arrays.toString(sorted)+" - "+sortMethod.getClass());
+        sortMethod.sort(sorted);
+        System.out.println(" - "+sortMethod.getClass()+" -");
     }
     private static void measureTime(Runnable task) {
         long startTime = System.currentTimeMillis();
         task.run();
         long elapsed = System.currentTimeMillis() - startTime;
-        System.out.println("Затраченное время: " + elapsed + " ms");
+        System.out.println("Затраченное время: " + elapsed + " ms"+"\n");
     }
 }
