@@ -10,10 +10,12 @@ public class Main {
     public static void main(String[] args)  {
         int[] testArray = {2, 4, 66, 4, 3, 23, 5, 330,4,4,0,1};
 
+
         sorting(new BubbleSort(),testArray);                                      //BubbleSort
 
         sorting(new SelectionSort(),testArray);                                    //Selection sorting
 
+        sorting(new QuickSort(),testArray);                                       //Qsort
     }
 
 
@@ -23,4 +25,5 @@ public class Main {
         sorted = sortMethod.sort(sorted);
         System.out.println(Arrays.toString(sorted)+" - "+sortMethod.getClass());
     }
+
 }

@@ -6,15 +6,11 @@ public class SelectionSort implements SortMethod{
     public int[] sort(int[] nonSort) {
 
         for (int i = 0; i < nonSort.length; i++) {
-            System.out.println(Arrays.toString(nonSort) +" step "+i);
+          //  System.out.println(Arrays.toString(nonSort) +" step "+i);   //sorting visualisation
             int minIndex =min(nonSort,i);
             int temp = nonSort[i];
                 nonSort[i] = nonSort[minIndex];
                 nonSort[minIndex] = temp;
-
-
-
-
         }
         return nonSort;
     }
