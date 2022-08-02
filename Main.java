@@ -14,8 +14,10 @@ public class Main {
             testArray[i] = (int)Math.round(Math.random() * 100);
         }
         measureTime(() -> sorting(new QuickSort(),testArray));       //Qsort
+        measureTime(() -> sorting(new MergeSort(),testArray));       //mSort
         measureTime(() -> sorting(new SelectionSort(),testArray));   //selectionSort
         measureTime(() -> sorting(new BubbleSort(),testArray));      //Bubble-sort
+
 
 
 
